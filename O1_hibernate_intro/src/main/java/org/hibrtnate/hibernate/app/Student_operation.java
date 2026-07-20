@@ -97,5 +97,20 @@ public class Student_operation {
         return transactionStatus?"Operation success":"operation Failed";
 
     }
+    public Student getStudent(int id){
+        SessionFactory sessionFactory=GetSessionFactory.getConnectedSessionFactory();
+        Session session=null;
+        Student student=null;
+        try{
+            session=sessionFactory.openSession();
+            student=session.find(Student.class,id);
+        }catch (HibernateException e){
+            e.printStackTrace();
+        }finally {
+            session.close();
+            sessionFactory.close();
+        }
+        return student;
+    }
 
 }

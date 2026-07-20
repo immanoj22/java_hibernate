@@ -2,6 +2,7 @@ package org.hibrtnate;
 
 import org.hibrtnate.hibernate.app.Student_operation;
 import org.hibrtnate.hibernate.hooks.ScannerHook;
+import org.hibrtnate.hibernate.model.Student;
 
 import java.util.Scanner;
 
@@ -11,7 +12,8 @@ public class Main {
 //        insertStudent();
 //        updateStudent();
 //        delteStudent();
-        
+        getStudent();
+
     }
     public static void insertStudent(){
 
@@ -71,6 +73,12 @@ public class Main {
 
         System.out.println(message);
 
+    }
+
+    public static void getStudent(){
+        Student_operation newoperation=new Student_operation();
+        Student student=newoperation.getStudent(ScannerHook.getNumericScannerValue("Enter student id :"));
+        System.out.println(student.getName());
     }
 
 }
