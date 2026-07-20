@@ -9,15 +9,15 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args){
 
-//        insertStudent();
+        insertStudent();
 //        updateStudent();
 //        delteStudent();
-        getStudent();
+//        getStudent();
 
     }
     public static void insertStudent(){
 
-        int id= ScannerHook.getNumericScannerValue("Enter a preffered student Id :");
+//        int id= ScannerHook.getNumericScannerValue("Enter a preffered student Id :");
 
         String name=ScannerHook.getStringScannerValue("Enter student name :");
 
@@ -29,7 +29,7 @@ public class Main {
 
         Student_operation newoperation=new Student_operation();
 
-        String message=newoperation.insertNewStudent(id,name,age,gender,department);
+        String message=newoperation.insertNewStudent(name,age,gender,department);
 
         System.out.println(message);
 
@@ -37,7 +37,7 @@ public class Main {
 
     public static void updateStudent(){
 
-        int id= ScannerHook.getNumericScannerValue("Enter a preffered student Id :");
+//        int id= ScannerHook.getNumericScannerValue("Enter a preffered student Id :");
 
         String name=ScannerHook.getStringScannerValue("Enter student name :");
 
@@ -49,7 +49,7 @@ public class Main {
 
         Student_operation newoperation=new Student_operation();
 
-        String message=newoperation.updateStudent(id,name,age,gender,department);
+        String message=newoperation.updateStudent(name,age,gender,department);
 
         System.out.println(message);
 
@@ -57,7 +57,7 @@ public class Main {
 
     public static void delteStudent(){
 
-        int id= ScannerHook.getNumericScannerValue("Enter a preffered student Id :");
+//        int id= ScannerHook.getNumericScannerValue("Enter a preffered student Id :");
 
         String name=ScannerHook.getStringScannerValue("Enter student name :");
 
@@ -69,7 +69,7 @@ public class Main {
 
         Student_operation newoperation=new Student_operation();
 
-        String message=newoperation.deleteStudent(id,name,age,gender,department);
+        String message=newoperation.deleteStudent(name,age,gender,department);
 
         System.out.println(message);
 

@@ -5,7 +5,7 @@ import org.hibrtnate.hibernate.hooks.GetSessionFactory;
 import org.hibrtnate.hibernate.model.Student;
 
 public class Student_operation {
-    public String insertNewStudent(int id,String name,int age,String gender,String department){
+    public String insertNewStudent(String name,int age,String gender,String department){
         SessionFactory sessionFactory=GetSessionFactory.getConnectedSessionFactory();
         Session session=sessionFactory.openSession();
         Transaction transaction=session.beginTransaction();
@@ -14,7 +14,7 @@ public class Student_operation {
         System.out.println(message);
         try{
             Student student=new Student();
-            student.setStudentId(id);
+//            student.setStudentId(id);
             student.setName(name);
             student.setStudentAge(age);
             student.setStudentGender(gender);
@@ -34,7 +34,7 @@ public class Student_operation {
 
     }
 
-    public String updateStudent(int id,String name,int age,String gender,String department){
+    public String updateStudent(String name,int age,String gender,String department){
         SessionFactory sessionFactory=GetSessionFactory.getConnectedSessionFactory();
         Session session=null;
         Transaction transaction=null;
@@ -44,7 +44,7 @@ public class Student_operation {
             transaction=session.beginTransaction();
 
             Student student=new Student();
-            student.setStudentId(id);
+//            student.setStudentId(id);
             student.setName(name);
             student.setStudentAge(age);
             student.setStudentGender(gender);
@@ -66,7 +66,7 @@ public class Student_operation {
 
     }
 
-    public String deleteStudent(int id,String name,int age,String gender,String department){
+    public String deleteStudent(String name,int age,String gender,String department){
         SessionFactory sessionFactory=GetSessionFactory.getConnectedSessionFactory();
         Session session=null;
         Transaction transaction=null;
@@ -76,7 +76,7 @@ public class Student_operation {
             transaction=session.beginTransaction();
 
             Student student=new Student();
-            student.setStudentId(id);
+//            student.setStudentId(id);
             student.setName(name);
             student.setStudentAge(age);
             student.setStudentGender(gender);

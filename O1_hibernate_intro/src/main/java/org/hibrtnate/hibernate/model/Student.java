@@ -1,9 +1,6 @@
 package org.hibrtnate.hibernate.model;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
 
@@ -14,6 +11,8 @@ public class Student {
 
     @Id
     @Column(name="id")
+    @GeneratedValue(generator = "sq_gen", strategy = GenerationType.AUTO)
+    @SequenceGenerator(name = "sq_gen",sequenceName = "my_own_seq",initialValue = 100,allocationSize = 1)
     private int StudentId;
 
     @Column(name = "name")
