@@ -9,7 +9,7 @@
         <property name="hibernate.connection.driver_class">org.postgresql.Driver</property>
         <property name="hibernate.connection.url">jdbc:postgresql://localhost:5432/Hibernate</property>
         <property name="hibernate.connection.username">postgres</property>
-        <property name="hibernate.connection.password">Manoj@205</property>
+        <property name="hibernate.connection.password">Test@123</property>
 
         <property name="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</property>
 
@@ -18,7 +18,6 @@
 
         <property name="hibernate.hbm2ddl.auto">update</property>
 
-        <mapping class="org.hibrtnate.hibernate.model.Student"/>
 
     </session-factory>
 </hibernate-configuration>

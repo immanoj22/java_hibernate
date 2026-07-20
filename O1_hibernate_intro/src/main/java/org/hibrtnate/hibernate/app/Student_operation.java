@@ -1,8 +1,6 @@
 package org.hibrtnate.hibernate.app;
 
-import org.hibernate.Session;
-import org.hibernate.SessionFactory;
-import org.hibernate.Transaction;
+import org.hibernate.*;
 import org.hibrtnate.hibernate.hooks.GetSessionFactory;
 import org.hibrtnate.hibernate.model.Student;
 
@@ -33,6 +31,70 @@ public class Student_operation {
             session.close();
         }
         return message;
+
+    }
+
+    public String updateStudent(int id,String name,int age,String gender,String department){
+        SessionFactory sessionFactory=GetSessionFactory.getConnectedSessionFactory();
+        Session session=null;
+        Transaction transaction=null;
+        boolean transactionStatus=false;
+        try{
+            session=sessionFactory.openSession();
+            transaction=session.beginTransaction();
+
+            Student student=new Student();
+            student.setStudentId(id);
+            student.setName(name);
+            student.setStudentAge(age);
+            student.setStudentGender(gender);
+            student.setStudentDepartment(department);
+
+            session.merge(student);
+            transactionStatus=true;
+        }catch (HibernateException e){
+            e.printStackTrace();
+        }finally {
+            if(transactionStatus){
+                transaction.commit();
+            }else{
+                transaction.rollback();
+            }
+        }
+
+        return transactionStatus?"Operation success":"operation Failed";
+
+    }
+
+    public String deleteStudent(int id,String name,int age,String gender,String department){
+        SessionFactory sessionFactory=GetSessionFactory.getConnectedSessionFactory();
+        Session session=null;
+        Transaction transaction=null;
+        boolean transactionStatus=false;
+        try{
+            session=sessionFactory.openSession();
+            transaction=session.beginTransaction();
+
+            Student student=new Student();
+            student.setStudentId(id);
+            student.setName(name);
+            student.setStudentAge(age);
+            student.setStudentGender(gender);
+            student.setStudentDepartment(department);
+
+            session.remove(student);
+            transactionStatus=true;
+        }catch (HibernateException e){
+            e.printStackTrace();
+        }finally {
+            if(transactionStatus){
+                transaction.commit();
+            }else{
+                transaction.rollback();
+            }
+        }
+
+        return transactionStatus?"Operation success":"operation Failed";
 
     }
 
