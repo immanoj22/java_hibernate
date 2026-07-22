@@ -16,4 +16,9 @@ public class InputHooks {
         System.out.print(message+" : ");
         return getScanner().nextLine();
     }
+
+    public static boolean getBooleanValue(String message){
+        System.out.print(message+" : ");
+        return getScanner().nextBoolean();
+    }
 }
