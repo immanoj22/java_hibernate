@@ -11,7 +11,7 @@ import org.hibernate.Transaction;
 public class OneToOneOperation {
 
     public static void main(String[] args) {
-//        insertQuestionAndAnswer()
+        insertQuestionAndAnswer();
 //        getQuestionById();
 //        getAnswerById();
     }
